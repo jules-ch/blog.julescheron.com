@@ -171,36 +171,29 @@ into the {body} of the default.hbs template --}}
                     </a>
                   </li>
                 {{/if}}
+                <li>
+                    <a href="https://github.com/jules-ch" target="_blank" rel="noopener"><span class="icon-github"></span></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/jules-ch%C3%A9ron/" target="_blank" rel="noopener"><span class="icon-linkedin"></span></a>
+                  </li>
+                <li>
+                  <a href="https://www.instagram.com/julescheron/" target="_blank" rel="noopener"><span class="icon-instagram"></span></a>
+                  </li>
               </ul>
             </div>
           </div>
         </section>
         {{!-- If you want to embed comments, this is a good place to do it! --}}
-        {{!--
+        
           <section class="m-comments">
-            <div class="m-load-comments">
-              <div class="m-load-comments__line"></div>
-              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-                <span class="icon-comments"></span>
-              </button>
-            </div>
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
+            <div class="l-wrapper in-comments">
+                <div id="commento"></div>
+                <script defer src="https://commento.julescheron.com/js/commento.js"></script>
+                <noscript>{{t "Please enable JavaScript to load the comments."}}</noscript>
             </div>
           </section>
-        --}}
+       
       {{/post}}
       {{!-- Related posts --}}
       {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}

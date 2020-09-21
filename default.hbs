@@ -18,7 +18,10 @@
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
     <link rel="preconnect" href="https://polyfill.io">
     <link rel="dns-prefetch" href="https://polyfill.io">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://fathom.julescheron.com">
+    
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
 
@@ -117,5 +120,18 @@
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
+
+    {{!-- Service Worker for PWA --}}
+    {{!-- <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register("/sw.js").then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+    </script> --}}
   </body>
 </html>
