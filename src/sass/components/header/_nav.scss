@@ -127,6 +127,31 @@
       background: linear-gradient(90deg, var(--header-menu-gradient-first-color) 0, var(--header-menu-gradient-secound-color));
     }
   }
+
+  // Social Icons
+  ul {
+    padding: 0;
+    margin: 0;
+
+    @include respond-to('medium') {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  li {
+    color: var(--titles-color);
+    font-size: 16px;
+    margin-bottom: 15px;
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+      margin-right: 15px;
+      position: relative;
+    }
+  }
+
+
 }
 
 .rtl {
